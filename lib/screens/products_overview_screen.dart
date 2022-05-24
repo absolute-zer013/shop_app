@@ -5,6 +5,7 @@ import 'package:provider/provider.dart';
 //widget
 import '../widgets/products_grid.dart';
 import '../widgets/badge.dart';
+import '../widgets/main_drawer.dart';
 
 //provider
 import '../providers/cart.dart';
@@ -18,6 +19,7 @@ enum FilterOptions {
 }
 
 class ProductsOverviewScreen extends StatefulWidget {
+  static const routeName = '/';
   @override
   _ProductsOverviewScreenState createState() => _ProductsOverviewScreenState();
 }
@@ -71,6 +73,7 @@ class _ProductsOverviewScreenState extends State<ProductsOverviewScreen> {
           ),
         ],
       ),
+      drawer: MainDrawer(),
       body: ProductsGrid(_showOnlyFavorites),
     );
   }
