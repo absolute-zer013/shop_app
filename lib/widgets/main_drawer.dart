@@ -28,6 +28,11 @@ class MainDrawer extends StatelessWidget {
     return Drawer(
       child: Column(
         children: <Widget>[
+          //alternative solution
+          // AppBar(
+          //   title: Text('Hello Friend!'),
+          //   automaticallyImplyLeading: false,
+          // ),
           Container(
             height: 120,
             width: double.infinity,
@@ -35,7 +40,7 @@ class MainDrawer extends StatelessWidget {
             alignment: Alignment.centerLeft,
             color: Theme.of(context).primaryColor,
             child: Text(
-              'Order Now',
+              'Shopee',
               style: TextStyle(
                 fontWeight: FontWeight.w900,
                 fontSize: 30,
@@ -43,21 +48,23 @@ class MainDrawer extends StatelessWidget {
               ),
             ),
           ),
-          SizedBox(
-            height: 20,
-          ),
+          Divider(),
           buildListTile(
-            "Order Details",
-            Icons.shopping_cart_checkout,
+            "Shop",
+            Icons.shop,
+            () {
+              Navigator.of(context).pushReplacementNamed('/');
+            },
+          ),
+          Divider(),
+          buildListTile(
+            "Orders",
+            Icons.payment,
             () {
               Navigator.of(context)
                   .pushReplacementNamed(OrdersScreen.routeName);
             },
           ),
-          buildListTile('Product Overview', Icons.shopping_bag, () {
-            Navigator.of(context)
-                .pushReplacementNamed(ProductsOverviewScreen.routeName);
-          })
         ],
       ),
     );

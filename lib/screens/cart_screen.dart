@@ -1,4 +1,3 @@
-//packages
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -8,6 +7,7 @@ import '../providers/orders.dart';
 
 //Widgets
 import '../widgets/cart_item.dart';
+import '../widgets/confirm_dialog_KIV.dart';
 
 class CartScreen extends StatelessWidget {
   static const routeName = '/cart';
@@ -19,9 +19,11 @@ class CartScreen extends StatelessWidget {
       context,
       listen: false,
     );
+
     return Scaffold(
       appBar: AppBar(
         title: Text('Your Cart'),
+        backgroundColor: Theme.of(context).primaryColor,
       ),
       body: Column(children: <Widget>[
         Card(
