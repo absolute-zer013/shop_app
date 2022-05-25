@@ -7,7 +7,6 @@ import '../providers/orders.dart';
 
 //Widgets
 import '../widgets/cart_item.dart';
-import '../widgets/confirm_dialog_KIV.dart';
 
 class CartScreen extends StatelessWidget {
   static const routeName = '/cart';
@@ -55,6 +54,7 @@ class CartScreen extends StatelessWidget {
                       cart.totalAmount,
                     );
                     cart.clear();
+                    showAlertDialog(context);
                   },
                   child: Text('Order Now'),
                   textColor: Theme.of(context).primaryColor,
@@ -81,4 +81,26 @@ class CartScreen extends StatelessWidget {
       ]),
     );
   }
+
+  void showAlertDialog(BuildContext context) => showDialog(
+        context: context,
+        builder: (ctx) => AlertDialog(
+          title: Text('Order Confirm'),
+          content: SingleChildScrollView(
+            child: ListBody(
+              children: <Widget>[
+                Text('You can view your list of order in the order menu'),
+              ],
+            ),
+          ),
+          actions: <Widget>[
+            TextButton(
+              child: Text('Ok'),
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+            )
+          ],
+        ),
+      );
 }
