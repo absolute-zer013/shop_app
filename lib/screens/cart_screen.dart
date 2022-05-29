@@ -47,7 +47,7 @@ class CartScreen extends StatelessWidget {
                   ),
                   backgroundColor: Theme.of(context).primaryColor,
                 ),
-                FlatButton(
+                TextButton(
                   onPressed: () {
                     orders.addOrder(
                       cart.items.values.toList(),
@@ -57,7 +57,9 @@ class CartScreen extends StatelessWidget {
                     showAlertDialog(context);
                   },
                   child: Text('Order Now'),
-                  textColor: Theme.of(context).primaryColor,
+                  style: TextButton.styleFrom(
+                    primary: Theme.of(context).primaryColor,
+                  ),
                 ),
               ],
             ),
@@ -82,7 +84,7 @@ class CartScreen extends StatelessWidget {
     );
   }
 
-  void showAlertDialog(BuildContext context) => showDialog(
+  void showAlertDialog(context) => showDialog(
         context: context,
         builder: (ctx) => AlertDialog(
           title: Text('Order Confirm'),

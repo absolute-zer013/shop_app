@@ -6,6 +6,7 @@ import './screens/products_overview_screen.dart';
 import './screens/product_detail_screen.dart';
 import './screens/cart_screen.dart';
 import './screens/orders_screen.dart';
+import './screens/user_product_screen.dart';
 
 //Providers
 import './providers/products.dart';
@@ -34,14 +35,17 @@ class MyApp extends StatelessWidget {
           debugShowCheckedModeBanner: false,
           theme: ThemeData(
             primaryColor: Color.fromARGB(255, 255, 102, 0),
-            accentColor: Colors.deepOrange,
             fontFamily: 'Lato',
+            colorScheme: Theme.of(context).colorScheme.copyWith(
+                  secondary: Colors.deepOrange,
+                ),
           ),
           home: ProductsOverviewScreen(),
           routes: {
             ProductDetailScreen.routeName: (ctx) => ProductDetailScreen(),
             CartScreen.routeName: (ctx) => CartScreen(),
             OrdersScreen.routeName: (ctx) => OrdersScreen(),
+            UserProductScreen.routeName: (ctx) => UserProductScreen(),
           }),
     );
   }

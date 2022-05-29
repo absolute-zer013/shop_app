@@ -36,6 +36,13 @@ class Products with ChangeNotifier {
       imageUrl:
           'https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Cast-Iron-Pan.jpg/1024px-Cast-Iron-Pan.jpg',
     ),
+    Product(
+      id: 'p5',
+      title: 'Sony Playstation 5',
+      description: 'Game console',
+      imageUrl:
+          'https://i.pcmag.com/imagery/reviews/047S0c9zdo5nBklbPt1Dbs9-12.fit_scale.size_1028x578.v1604614641.jpg',
+    )
   ];
   // var _showFavoritesOnly = false;
 

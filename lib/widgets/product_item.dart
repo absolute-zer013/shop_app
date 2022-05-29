@@ -1,3 +1,5 @@
+// ignore_for_file: deprecated_member_use
+
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -35,14 +37,14 @@ class ProductItem extends StatelessWidget {
           backgroundColor: Colors.black87,
           leading: Consumer<Product>(
             builder: (ctx, product, _) => IconButton(
-                  icon: Icon(
-                    product.isFavorite ? Icons.favorite : Icons.favorite_border,
-                  ),
-                  color: Theme.of(context).accentColor,
-                  onPressed: () {
-                    product.toggleFavoriteStatus();
-                  },
-                ),
+              icon: Icon(
+                product.isFavorite ? Icons.favorite : Icons.favorite_border,
+              ),
+              color: Theme.of(context).colorScheme.secondary,
+              onPressed: () {
+                product.toggleFavoriteStatus();
+              },
+            ),
           ),
           title: Text(
             product.title,
@@ -54,8 +56,23 @@ class ProductItem extends StatelessWidget {
             ),
             onPressed: () {
               cart.addItem(product.id, product.price, product.title);
+              ScaffoldMessenger.of(context).hideCurrentSnackBar();
+              ScaffoldMessenger.of(context).showSnackBar(
+                SnackBar(
+                  content: Text(
+                    'Added item to cart!',
+                  ),
+                  duration: Duration(seconds: 2),
+                  action: SnackBarAction(
+                    label: 'UNDO',
+                    onPressed: () {
+                      cart.removeSingleItem(product.id);
+                    },
+                  ),
+                ),
+              );
             },
-            color: Theme.of(context).accentColor,
+            color: Theme.of(context).colorScheme.secondary,
           ),
         ),
       ),
