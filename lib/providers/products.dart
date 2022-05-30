@@ -40,6 +40,7 @@ class Products with ChangeNotifier {
       id: 'p5',
       title: 'Sony Playstation 5',
       description: 'Game console',
+      price: 1800.00,
       imageUrl:
           'https://i.pcmag.com/imagery/reviews/047S0c9zdo5nBklbPt1Dbs9-12.fit_scale.size_1028x578.v1604614641.jpg',
     )

@@ -27,6 +27,16 @@ class ProductDetailScreen extends StatelessWidget {
         child: Column(
           children: <Widget>[
             Container(
+              decoration: BoxDecoration(
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.grey.withOpacity(0.5),
+                    spreadRadius: 5,
+                    blurRadius: 7,
+                    offset: Offset(0, 5),
+                  )
+                ],
+              ),
               height: 300,
               width: double.infinity,
               child: Image.network(
@@ -34,28 +44,91 @@ class ProductDetailScreen extends StatelessWidget {
                 fit: BoxFit.cover,
               ),
             ),
-            SizedBox(
-              height: 10,
-            ),
-            Text(
-              '\$${loadedProduct.price}',
-              style: TextStyle(
-                color: Colors.grey,
-                fontSize: 20,
+            // SizedBox(
+            //   height: 5,
+            // ),
+            Container(
+              height: 75,
+              width: double.infinity,
+              //color: Colors.amber,
+              child: Padding(
+                padding: const EdgeInsets.only(
+                  left: 20.0,
+                  right: 20,
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: <Widget>[
+                    Text(
+                      loadedProduct.title,
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 25,
+                        fontFamily: 'Arton',
+                      ),
+                    ),
+                    Text(
+                      'RM ${loadedProduct.price}',
+                      style: TextStyle(
+                        color: Theme.of(context).primaryColor,
+                        fontSize: 20,
+                        fontFamily: 'Lato',
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ),
             SizedBox(
-              height: 10,
+              height: 25,
             ),
             Container(
-              padding: EdgeInsets.symmetric(
-                horizontal: 10,
-              ),
+              height: 80,
               width: double.infinity,
-              child: Text(
-                loadedProduct.description,
-                textAlign: TextAlign.center,
-                softWrap: true,
+              //color: Colors.amber,
+              child: Padding(
+                padding: const EdgeInsets.only(
+                  left: 20.0,
+                  right: 20,
+                ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      'PRODUCT DETAILS',
+                      style: TextStyle(
+                        color: Theme.of(context).primaryColor,
+                        fontSize: 15,
+                        fontFamily: 'Lato',
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    Divider(
+                      thickness: 1,
+                      color: Theme.of(context).primaryColor,
+                    ),
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Container(
+                          margin: EdgeInsets.only(
+                            top: 7,
+                            right: 5,
+                          ),
+                          height: 5,
+                          width: 5,
+                          color: Colors.deepOrange,
+                        ),
+                        Text(
+                          loadedProduct.description,
+                          textAlign: TextAlign.center,
+                          softWrap: true,
+                        ),
+                      ],
+                    )
+                  ],
+                ),
               ),
             )
           ],
