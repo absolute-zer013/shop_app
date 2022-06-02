@@ -36,14 +36,6 @@ class Products with ChangeNotifier {
       imageUrl:
           'https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Cast-Iron-Pan.jpg/1024px-Cast-Iron-Pan.jpg',
     ),
-    Product(
-      id: 'p5',
-      title: 'Sony Playstation 5',
-      description: 'Game console',
-      price: 1800.00,
-      imageUrl:
-          'https://s.yimg.com/ny/api/res/1.2/Nm0Cr5OWEm1RQQ1weCGfMg--/YXBwaWQ9aGlnaGxhbmRlcjt3PTEyNDI-/https://itk-assets.nyc3.cdn.digitaloceanspaces.com/2020/11/ps5-digital-edition-946x1024.jpg',
-    ),
   ];
   // var _showFavoritesOnly = false;
 
@@ -72,7 +64,15 @@ class Products with ChangeNotifier {
   //   notifyListeners();
   // }
 
-  void addProduct() {
+  void addProduct(Product product) {
+    final newProduct = Product(
+      title: product.title,
+      description: product.description,
+      price: product.price,
+      imageUrl: product.imageUrl,
+      id: DateTime.now().toString(),
+    );
+    _items.add(newProduct);
     // _items.add(value);
     notifyListeners();
   }
