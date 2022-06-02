@@ -42,8 +42,8 @@ class Products with ChangeNotifier {
       description: 'Game console',
       price: 1800.00,
       imageUrl:
-          'https://i.pcmag.com/imagery/reviews/047S0c9zdo5nBklbPt1Dbs9-12.fit_scale.size_1028x578.v1604614641.jpg',
-    )
+          'https://s.yimg.com/ny/api/res/1.2/Nm0Cr5OWEm1RQQ1weCGfMg--/YXBwaWQ9aGlnaGxhbmRlcjt3PTEyNDI-/https://itk-assets.nyc3.cdn.digitaloceanspaces.com/2020/11/ps5-digital-edition-946x1024.jpg',
+    ),
   ];
   // var _showFavoritesOnly = false;
 
