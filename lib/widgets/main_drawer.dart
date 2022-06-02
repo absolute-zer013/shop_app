@@ -4,25 +4,6 @@ import '../screens/orders_screen.dart';
 import '../screens/user_product_screen.dart';
 
 class MainDrawer extends StatelessWidget {
-  Widget buildListTile(String title, IconData icon, Function tapHandler) {
-    return ListTile(
-      leading: Icon(
-        Icons.shopping_bag,
-        size: 26,
-      ),
-      title: Text(
-        title,
-        style: TextStyle(
-          fontFamily: 'Lato',
-          fontWeight: FontWeight.bold,
-        ),
-      ),
-      onTap: () {
-        tapHandler();
-      },
-    );
-  }
-
   @override
   Widget build(BuildContext context) {
     return Drawer(
@@ -49,27 +30,45 @@ class MainDrawer extends StatelessWidget {
             ),
           ),
           Divider(),
-          buildListTile(
-            "Shop",
-            Icons.shop,
-            () {
+          ListTile(
+            title: Text(
+              "Shop",
+              style: TextStyle(fontFamily: 'Arton'),
+            ),
+            leading: Icon(
+              Icons.shop,
+              color: Colors.deepOrange,
+            ),
+            onTap: () {
               Navigator.of(context).pushReplacementNamed('/');
             },
           ),
           Divider(),
-          buildListTile(
-            "Orders",
-            Icons.payment,
-            () {
+          ListTile(
+            title: Text(
+              "Orders",
+              style: TextStyle(fontFamily: 'Arton'),
+            ),
+            leading: Icon(
+              Icons.payment,
+              color: Colors.deepOrange,
+            ),
+            onTap: () {
               Navigator.of(context)
                   .pushReplacementNamed(OrdersScreen.routeName);
             },
           ),
           Divider(),
-          buildListTile(
-            "Manage Products",
-            Icons.edit,
-            () {
+          ListTile(
+            title: Text(
+              "Manage Products",
+              style: TextStyle(fontFamily: 'Arton'),
+            ),
+            leading: Icon(
+              Icons.edit,
+              color: Colors.deepOrange,
+            ),
+            onTap: () {
               Navigator.of(context)
                   .pushReplacementNamed(UserProductScreen.routeName);
             },
