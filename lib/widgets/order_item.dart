@@ -56,7 +56,7 @@ class _OrderItemState extends State<OrderItem> {
                                   fontSize: 18, fontWeight: FontWeight.bold),
                             ),
                             Text(
-                              '${prod.quantity}x \$${prod.price}',
+                              '${prod.quantity}x RM${prod.price}',
                               style: TextStyle(
                                 fontSize: 18,
                                 fontFamily: 'Lato',
