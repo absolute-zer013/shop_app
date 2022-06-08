@@ -1,14 +1,15 @@
+//Packages
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-//provider
+//Provider
 import '../providers/products.dart';
 
-//widgets
+//Widgets
 import '../widgets/user_product.dart';
 import '../widgets/main_drawer.dart';
 
-//screen
+//Screen
 import '../screens/edit_product.dart';
 
 class UserProductScreen extends StatelessWidget {

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+//Custom widget provided by tutorial
+
 class Badge extends StatelessWidget {
   const Badge({
     Key key,

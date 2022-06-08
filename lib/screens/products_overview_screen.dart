@@ -14,6 +14,7 @@ import '../providers/products.dart';
 //screen
 import '../screens/cart_screen.dart';
 
+//For filtering purpose
 enum FilterOptions {
   Favorites,
   All,
@@ -30,14 +31,14 @@ class _ProductsOverviewScreenState extends State<ProductsOverviewScreen> {
   var _initState = true;
   var _isLoading = false;
 
-  @override
-  void initState() {
-    //Provider.of<Products>(context).fetchAndSetProduct(); //CANNOT TO THIS, IT WONT WORK
-    // Future.delayed(Duration.zero).then((_) {
-    //   Provider.of<Products>(context).fetchAndSetProduct();
-    // }); ONE OF THE SOLUTION
-    super.initState();
-  }
+  //One of the solution to use instead of using didChangeDependencies
+  // @override
+  // void initState() {
+  //   // Future.delayed(Duration.zero).then((_) {
+  //   //   Provider.of<Products>(context).fetchAndSetProduct();
+  //   // }); ONE OF THE SOLUTION
+  //   super.initState();
+  // }
 
   @override
   void didChangeDependencies() {

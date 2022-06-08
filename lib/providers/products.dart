@@ -20,13 +20,16 @@ class Products with ChangeNotifier {
     return _items.firstWhere((prod) => prod.id == id);
   }
 
+  //Getting order from firebase database
   Future<void> fetchAndSetProduct() async {
     final url = Uri.parse(
         'https://shop-app-6a133-default-rtdb.asia-southeast1.firebasedatabase.app/products.json');
+
+    final response = await http.get(url);
+    final extractedData = json.decode(response.body) as Map<String, dynamic>;
+    final List<Product> loadedProducts = [];
+    if (extractedData == null) return;
     try {
-      final response = await http.get(url);
-      final extractedData = json.decode(response.body) as Map<String, dynamic>;
-      final List<Product> loadedProducts = [];
       extractedData.forEach(
         (prodId, prodData) {
           loadedProducts.add(
@@ -48,6 +51,7 @@ class Products with ChangeNotifier {
     }
   }
 
+  //adding product function
   Future<void> addProduct(Product product) async {
     final url = Uri.parse(
         'https://shop-app-6a133-default-rtdb.asia-southeast1.firebasedatabase.app/products.json');
@@ -78,6 +82,7 @@ class Products with ChangeNotifier {
     }
   }
 
+  //edit product function
   Future<void> updateProduct(String id, Product newProduct) async {
     final proIndex = _items.indexWhere((prod) => prod.id == id);
     if (proIndex >= 0) {
@@ -102,6 +107,7 @@ class Products with ChangeNotifier {
     }
   }
 
+  //delete product function
   Future<void> deleteProduct(String id) async {
     final url = Uri.parse(
         'https://shop-app-6a133-default-rtdb.asia-southeast1.firebasedatabase.app/products/$id.json');

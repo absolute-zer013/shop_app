@@ -3,9 +3,10 @@ class HttpException implements Exception {
 
   HttpException(this.message);
 
+  //This file is use to return HTTP Error code for error checking and handling
+
   @override
   String toString() {
-    // TODO: implement toString
     return message;
   }
 }
