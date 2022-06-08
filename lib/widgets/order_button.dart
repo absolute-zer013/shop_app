@@ -1,6 +1,8 @@
+//Packages
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+//Providers
 import '../providers/cart.dart';
 import '../providers/orders.dart';
 
@@ -8,7 +10,7 @@ class OrderButton extends StatefulWidget {
   final Cart cart;
 
   OrderButton(
-    @required this.cart,
+    this.cart,
   );
 
   @override

@@ -13,6 +13,8 @@ class EditProductScreen extends StatefulWidget {
 }
 
 class _EditProductScreenState extends State<EditProductScreen> {
+  //NOTE NEED TO EXPLORE MORE ABOUT FOCUS NODE
+  //Not sure why we need focus node
   final _priceFocusNode = FocusNode();
   final _desciptionFocusNode = FocusNode();
   final _imageUrlFocusNode = FocusNode();
