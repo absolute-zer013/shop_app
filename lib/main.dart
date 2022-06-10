@@ -15,6 +15,7 @@ import './screens/orders_screen.dart';
 import './screens/user_product_screen.dart';
 import './screens/edit_product.dart';
 import './screens/auth_screen.dart';
+import './screens/splash_screen.dart';
 
 void main() => runApp(MyApp());
 
@@ -43,7 +44,7 @@ class MyApp extends StatelessWidget {
                 secondary: Colors.deepOrange,
               ),
         ),
-        home: ProductsOverviewScreen(),
+        home: SplashScreen(),
         routes: {
           ProductDetailScreen.routeName: (ctx) => ProductDetailScreen(),
           CartScreen.routeName: (ctx) => CartScreen(),
@@ -51,6 +52,7 @@ class MyApp extends StatelessWidget {
           UserProductScreen.routeName: (ctx) => UserProductScreen(),
           EditProductScreen.routeName: (context) => EditProductScreen(),
           AuthScreen.routeName: (context) => AuthScreen(),
+          SplashScreen.routeName: (context) => SplashScreen(),
         },
       ),
     );
