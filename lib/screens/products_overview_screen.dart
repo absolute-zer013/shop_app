@@ -1,6 +1,5 @@
 //package
 import 'package:flutter/material.dart';
-import 'package:flutter_complete_guide/screens/auth_screen.dart';
 import 'package:provider/provider.dart';
 
 //widget
@@ -22,7 +21,7 @@ enum FilterOptions {
 }
 
 class ProductsOverviewScreen extends StatefulWidget {
-  static const routeName = '/';
+  static const routeName = '/home';
   @override
   _ProductsOverviewScreenState createState() => _ProductsOverviewScreenState();
 }

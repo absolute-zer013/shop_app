@@ -41,7 +41,9 @@ class SplashScreen extends StatelessWidget {
                     width: 200,
                     height: 50,
                     child: ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.of(context).pushNamed(SignInScreen.routeName);
+                      },
                       child: Text(
                         'Sign In',
                         style: TextStyle(
@@ -60,7 +62,9 @@ class SplashScreen extends StatelessWidget {
                     width: 200,
                     height: 50,
                     child: ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.of(context).pushNamed(SignUpScreen.routeName);
+                      },
                       child: Text(
                         'Sign Up',
                         style: TextStyle(
