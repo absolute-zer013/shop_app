@@ -46,7 +46,7 @@ class MyApp extends StatelessWidget {
                 secondary: Colors.deepOrange,
               ),
         ),
-        home: SplashScreen(),
+        home: ProductsOverviewScreen(),
         routes: {
           ProductDetailScreen.routeName: (ctx) => ProductDetailScreen(),
           CartScreen.routeName: (ctx) => CartScreen(),
