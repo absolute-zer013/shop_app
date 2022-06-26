@@ -29,7 +29,7 @@ class Product with ChangeNotifier {
     isFavorite = !isFavorite;
     notifyListeners();
     final url = Uri.parse(
-        'https://shop-app-6a133-default-rtdb.asia-southeast1.firebasedatabase.app/products/$id.json');
+        'https://shop-app-test-db-default-rtdb.asia-southeast1.firebasedatabase.app/products/$id.json');
     try {
       final response = await http.patch(
         url,

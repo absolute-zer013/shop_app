@@ -39,7 +39,7 @@ class Cart with ChangeNotifier {
     String title,
   ) {
     if (_items.containsKey(productId)) {
-      // change quantity...
+      // change quantity... and notify listeners
       _items.update(
         productId,
         (existingCartItem) => CartItem(
@@ -68,13 +68,13 @@ class Cart with ChangeNotifier {
     notifyListeners();
   }
 
-  //Remove Order in the cart
+  //Remove Order in the cart when the user click the 'Remove' button
   void removeOder(String productId) {
     _items.remove(productId);
     notifyListeners();
   }
 
-  //Clear the cart order
+  //Clear the cart order when the user click the 'Clear' button
   void clear() {
     _items = {};
     notifyListeners();

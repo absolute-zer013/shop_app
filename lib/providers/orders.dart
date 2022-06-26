@@ -31,7 +31,7 @@ class Orders with ChangeNotifier {
   Future<void> addOrder(List<CartItem> cartProducts, double total) async {
     final timeStamp = DateTime.now();
     final url = Uri.parse(
-        'https://shop-app-6a133-default-rtdb.asia-southeast1.firebasedatabase.app/orders.json');
+        'https://shop-app-test-db-default-rtdb.asia-southeast1.firebasedatabase.app/orders.json');
     try {
       final response = await http.post(
         url,
@@ -71,7 +71,7 @@ class Orders with ChangeNotifier {
   //Getting order from firebase database
   Future<void> fetchAndSetOrder() async {
     final url = Uri.parse(
-        'https://shop-app-6a133-default-rtdb.asia-southeast1.firebasedatabase.app/orders.json');
+        'https://shop-app-test-db-default-rtdb.asia-southeast1.firebasedatabase.app/orders.json');
 
     final response = await http.get(url);
     final List<OrderItem> loadedOrders = [];
