@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-//Providers
+//Providers and Models
 import '../providers/cart.dart';
 import '../providers/orders.dart';
 
